@@ -10,16 +10,14 @@ module.exports = function(grunt){
         clean: ['dist'],
 
         copy: {
-            build:{
-                cwd: 'app',
+            main:{
                 src: [
-                    '*.css',
-                    '*.html',
-                    './js/**/*.js',
-                    './bower_components/**/*',
+                    'app/*.css',
+                    'app/*.html',
+                    //'./bower_components/**/*',
                     '!Gruntfile.js'
                 ],
-                dest: 'dist/'
+                dest: 'dist/',
             }
         },
 
@@ -70,7 +68,7 @@ module.exports = function(grunt){
     });
 
     grunt.registerTask('default', 'jshint');
-    grunt.registerTask('build', ['clean', 'copy']);
+    grunt.registerTask('build', ['clean','copy']);
     grunt.registerTask('serve', ['build', 'express:dev','watch']);
 
 };
