@@ -14,7 +14,8 @@ module.exports = function(grunt){
                 src: [
                     'app/*.css',
                     'app/*.html',
-                    //'./bower_components/**/*',
+                    'app/*.js',
+                    './bower_components/**/*',
                     '!Gruntfile.js'
                 ],
                 dest: 'dist/',
@@ -35,7 +36,7 @@ module.exports = function(grunt){
         connect: {
             options: {
                 port: process.env.PORT || 3000,
-                base: 'dist/client.js'
+                base: 'dist/app/'
               },
             all: {}
         },
