@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "author": "Chelsea Lura",
   "dependencies": {
-    "express": "^4.4.2"
+    "express": "^4.4.2",
+    "wolfy87-eventemitter": "^4.2.6"
   },
   "devDependencies": {
     "browserify": "^4.1.9",

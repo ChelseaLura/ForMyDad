@@ -14,9 +14,6 @@ module.exports = function(grunt){
                 src: [
                     'app/*.css',
                     'app/*.html',
-                    'app/*.js',
-                    './bower_components/**/*',
-                    '!Gruntfile.js'
                 ],
                 dest: 'dist/',
             }
@@ -33,13 +30,24 @@ module.exports = function(grunt){
             }
         },
 
-        connect: {
+        browserify: {
+            all: {
+                src: 'app/js/*.js',
+                dest: 'dist/app/client.js'
+            },
             options: {
-                port: process.env.PORT || 3000,
-                base: 'dist/app/'
-              },
-            all: {}
+                transform: ['debowerify'],
+                debug: true
+            }
         },
+
+        // connect: {
+        //     options: {
+        //         port: process.env.PORT || 3000,
+        //         base: 'dist/app/'
+        //       },
+        //     all: {}
+        // },
 
         watch: {
             scripts: {
@@ -69,7 +77,7 @@ module.exports = function(grunt){
     });
 
     grunt.registerTask('default', 'jshint');
-    grunt.registerTask('build', ['clean','copy']);
+    grunt.registerTask('build', ['clean','copy', 'browserify']);
     grunt.registerTask('serve', ['build', 'express:dev','watch']);
 
 };

@@ -2,7 +2,7 @@
 'use strict';
 var $ = require("jquery");
 var isotope = require('isotope');
-var imagesLoaded = require('imagesLoaded');
+var imagesLoaded = require('imagesloaded/imagesloaded.pkgd.js');
 
 
 $( function() {
