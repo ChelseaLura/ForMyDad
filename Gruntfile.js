@@ -73,11 +73,21 @@ module.exports = function(grunt){
                     script: 'server.js'
                 }
             }
-        }
+        },
+        simplemocha: {
+            options: {
+                timeout: 3000,
+                ignoreLeaks: false,
+                ui: 'bdd'
+            },
+            all: { src: ['tests/**Test.js'] }
+        },
+
     });
 
     grunt.registerTask('default', 'jshint');
     grunt.registerTask('build', ['clean','copy', 'browserify']);
     grunt.registerTask('serve', ['build', 'express:dev','watch']);
+    grunt.registerTask('test', ['build', 'express:test', 'simplemocha']);
 
 };
