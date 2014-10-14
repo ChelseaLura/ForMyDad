@@ -20,10 +20,9 @@ module.exports = function(grunt){
         },
 
         jshint: {
-            all: ['Gruntfile.js', 'app/**/*.js', 'test/**/*.js','server.js'],
+            all: ['Gruntfile.js', 'app/**/*.js', 'tests/**/*.js','server.js'],
             options: {
                 globals: {
-                    jQuery: true,
                     console: true,
                     module: true
                 }

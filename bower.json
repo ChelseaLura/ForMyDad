@@ -15,5 +15,7 @@
     "tests"
   ],
   "dependencies": {
+    "isotope": "~2.0.1",
+    "jquery": "~2.1.1"
   }
 }
