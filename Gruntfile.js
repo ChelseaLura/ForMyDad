@@ -82,11 +82,20 @@ module.exports = function(grunt){
             all: { src: ['tests/**Test.js'] }
         },
 
+        karma: {
+          unit: {
+            options: {
+              files: ['tests/**.js']
+            }
+          }
+        }
+
     });
 
     grunt.registerTask('default', 'jshint');
     grunt.registerTask('build', ['clean','copy', 'browserify']);
     grunt.registerTask('serve', ['build', 'express:dev','watch']);
     grunt.registerTask('test', ['build', 'express:test', 'simplemocha']);
+    grunt.registerTask('karma-test', ['build', 'karma']);
 
 };
