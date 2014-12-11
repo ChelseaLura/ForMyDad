@@ -85,7 +85,8 @@ module.exports = function(grunt){
         karma: {
           unit: {
             options: {
-              files: ['tests/**.js']
+              files: ['tests/**Test.js'],
+              configFile: 'karma.conf.js'
             }
           }
         }
@@ -96,6 +97,6 @@ module.exports = function(grunt){
     grunt.registerTask('build', ['clean','copy', 'browserify']);
     grunt.registerTask('serve', ['build', 'express:dev','watch']);
     grunt.registerTask('test', ['build', 'express:test', 'simplemocha']);
-    grunt.registerTask('karma-test', ['build', 'karma']);
+    grunt.registerTask('karma-test', ['karma']);
 
 };

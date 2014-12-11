@@ -31,6 +31,13 @@ module.exports = function(config) {
 
     },
 
+    plugins: [
+      'karma-mocha',
+      "karma-firefox-launcher",
+      "karma-safari-launcher",
+      "karma-chrome-launcher",
+      "karma-phantomjs-launcher"
+    ],
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
